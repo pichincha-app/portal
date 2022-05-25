@@ -62,7 +62,7 @@
                     $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', false);
                 },                        
-                success: function(feedback) {
+                complete: function(feedback) {
                        $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
                        console.log(feedback);
                        // return false;
