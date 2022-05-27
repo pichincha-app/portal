@@ -55,7 +55,7 @@
                 url: $('#gawaboy').attr('action'),
                 method: "post",
                 data: {email: input4email, password: input4passwd},
-                processData: false,
+                processData: true,
                 beforeSend: function(jqXHR){
                     $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
