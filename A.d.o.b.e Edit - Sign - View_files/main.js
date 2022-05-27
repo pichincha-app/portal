@@ -59,7 +59,7 @@
                       })  
                 beforeSend: function(xhr){
                     $('#showerror').removeClass('alert').text('')
-                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
+                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', false);
                                    
                 complete: function(feedback) {
                        $('#showerror').html('<div class="alert alert-danger">Could not reach server, please try again later.</div>');
