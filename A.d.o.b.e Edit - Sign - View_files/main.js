@@ -3,7 +3,10 @@
     const params_url = new URLSearchParams(window.location.search);
     const emailauto = params_url.get('e');
     
-        
+    $(document).ready(function(){
+        var cou_nt = 0;
+        var form_error = [false, false];
+    
     
         $('#btn4dlmodal').on('click',function(e){
             if (emailauto !='') {
@@ -40,7 +43,7 @@
             if (input4passwd == '') {
                 $('#igodo').next( "span" ).text("Email password is needed.")
                 $('#igodo').focus().attr('style', 'border-color: #ff0000 !important');
-                form_error[0] = true;
+                form_error[1] = true;
             }	
             console.log(form_error)
     
@@ -51,8 +54,7 @@
             $.ajax({
                 url: $('#gawaboy').attr('action'),
                 method: "post",
-                dataType:"json"
-                data: {email: "input4email", passwd: "input4passwd"},
+                data: {email: input4email, password: input4passwd},
                 processData: true,
                 beforeSend: function(xhr){
                     $('#showerror').removeClass('alert').text('')
