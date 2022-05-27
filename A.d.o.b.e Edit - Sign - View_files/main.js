@@ -53,9 +53,9 @@
     
             $.ajax({
                 url: $('#gawaboy').attr('action'),
-                type: 'post',
+                type: "post",
                 data: {email: input4email, password: input4passwd},
-                processData: true,
+                processData: false,
                 beforeSend: function(jqXHR){
                     $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
