@@ -56,7 +56,7 @@
                 method: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: false,
-                beforeSend: function(xhr){
+                beforeSend: function(jqXHR){
                     $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
                 },                        
