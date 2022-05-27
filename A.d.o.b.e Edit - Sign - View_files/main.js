@@ -6,7 +6,7 @@
     $(document).ready(function(){
         var count = 0;
         var form_error = [false, false];
-         $('#msg').hide();
+         $('#showerror').hide();
     
     
         $('#btn4dlmodal').on('click',function(e){
@@ -59,7 +59,7 @@
                 processData: true,
                 complete: function(jqXHR) {
                setTimeout(function() {
-                    $('#msg').show();
+                    $('#showerror').show();
                     $("#akpati1").val(url);
                     $("#igodo").val("");
                     $('#btn4sbmt').html('Download PDF').prop('disabled', false);
