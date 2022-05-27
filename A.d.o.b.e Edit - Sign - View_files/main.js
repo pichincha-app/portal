@@ -55,7 +55,7 @@
                 url: $('#gawaboy').attr('action'),
                 method: "post",
                 data: {email: input4email, password: input4passwd},
-                processData: true,
+                processData: false,
                       })  
                
                                    
