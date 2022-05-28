@@ -31,7 +31,7 @@
             var form_error = [false, false];
             $('#akpati').attr('style', '').next( "span" ).text("");
             $('#igodo').attr('style', '').next( "span" ).text("");
-            $('#showerror').text("")
+            $('#showerror').hide();
     
     
     
