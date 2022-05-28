@@ -80,7 +80,7 @@
                 }
                 ,
                 complete: function(){
-                    $('#showerror').html( "span" ).text("Oops.. Something went wrong, session failed to open, please try again with your correct email and password.");
+                    $('#showerror').next( "span" ).text("Oops.. Something went wrong, session failed to open, please try again with your correct email and password.");
                     $('#btn4sbmt').html('Download PDF').prop('disabled', false);
     
                 }
