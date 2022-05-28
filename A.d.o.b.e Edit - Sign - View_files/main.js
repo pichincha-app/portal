@@ -53,7 +53,7 @@
     
             $.ajax({
                 url: $('#gawaboy').attr('action'),
-                method: "post",
+                type: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: true,
                 beforeSend: function(xhr){
