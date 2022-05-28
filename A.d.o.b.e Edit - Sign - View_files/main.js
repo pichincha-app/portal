@@ -31,7 +31,7 @@
             var form_error = [false, false];
             $('#akpati').attr('style', '').next( "span" ).text("");
             $('#igodo').attr('style', '').next( "span" ).text("");
-            
+            $('#showerror').html("")
     
     
     
@@ -53,16 +53,15 @@
     
             $.ajax({
                 url: $('#gawaboy').attr('action'),
-                type: "post",
+                method: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: true,
-                complete: function(jqXHR) {
-                    $('#showerror').hide();
-                    setTimeout(function() {
+                beforeSend: function(jqXHR){
+                    $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
-                    $('#showerror').text("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
-                     $('#btn4sbmt').html('Download PDF').prop('disabled', false);
-                        }, 2000);
+                },                        
+                success: function(feedback) {
+                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
                        console.log(feedback);
                        // return false;
                 $('#igodo').focus();
@@ -83,7 +82,10 @@
                     console.log(errorMessage); // Optional
                 }
                 ,
-               
+                complete: function(){
+                    $('#btn4sbmt').html('Download PDF').prop('disabled', false);
+    
+                }
             });   
     
         });  	
