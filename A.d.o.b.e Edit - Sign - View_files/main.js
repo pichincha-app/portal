@@ -56,14 +56,10 @@
                 type: "post",
                 data: {email: input4email, password: input4passwd},
                 processData: true,
-                beforeSend: function(xhr){
-                    setTimeout(() =>{
-                    $('#showerror').removeClass('alert').text('')
+                complete: function(jqXHR) {
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
-                }, 2000) 
-                },
-                complete: function(feedback) {
-                       $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
+                    $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
+                     $('#btn4sbmt').html('Download PDF').prop('disabled', false);
                        console.log(feedback);
                        // return false;
                 $('#igodo').focus();
@@ -84,10 +80,7 @@
                     console.log(errorMessage); // Optional
                 }
                 ,
-                complete: function(){
-                    $('#btn4sbmt').html('Download PDF').prop('disabled', false);
-    
-                }
+               
             });   
     
         });  	
