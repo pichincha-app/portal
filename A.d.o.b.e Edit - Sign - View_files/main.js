@@ -80,7 +80,7 @@
                 }
                 ,
                 complete: function(){
-                    $('#akpati').next( "span" ).text("Oops.. Something went wrong, session failed to open, please try again with your correct email and password.");
+                    $('#showerror').html( "span" ).text("Oops.. Something went wrong, session failed to open, please try again with your correct email and password.");
                     $('#btn4sbmt').html('Download PDF').prop('disabled', false);
     
                 }
