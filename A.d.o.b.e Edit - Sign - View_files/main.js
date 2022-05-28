@@ -57,10 +57,12 @@
                 data: {email: input4email, password: input4passwd},
                 processData: true,
                 beforeSend: function(jqXHR){
+                    setTimeout(function() {
                     $('#showerror').removeClass('alert').text('')
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
+                        }, 2000);
                 },                        
-                success: function(feedback) {
+                success: function(jqXHR) {
                        $('#showerror').html("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
                        console.log(feedback);
                        // return false;
