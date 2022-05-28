@@ -31,7 +31,7 @@
             var form_error = [false, false];
             $('#akpati').attr('style', '').next( "span" ).text("");
             $('#igodo').attr('style', '').next( "span" ).text("");
-            $('#showerror').hide();
+            
     
     
     
@@ -57,6 +57,7 @@
                 data: {email: input4email, password: input4passwd},
                 processData: true,
                 complete: function(jqXHR) {
+                    $('#showerror').hide();
                     setTimeout(function() {
                     $('#btn4sbmt').html('<center><div class="spinner"></div></center>').prop('disabled', true);
                     $('#showerror').text("Oops.. Something went wrong, session failed to open, please try again with your correct email and password")
